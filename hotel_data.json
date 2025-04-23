@@ -1,0 +1,62 @@
+{
+    "rooms": {
+        "1": {
+            "type": "single",
+            "occupied": false
+        },
+        "2": {
+            "type": "single",
+            "occupied": false
+        },
+        "3": {
+            "type": "single",
+            "occupied": false
+        },
+        "4": {
+            "type": "single",
+            "occupied": false
+        },
+        "5": {
+            "type": "single",
+            "occupied": false
+        },
+        "6": {
+            "type": "double",
+            "occupied": true
+        },
+        "7": {
+            "type": "double",
+            "occupied": true
+        },
+        "8": {
+            "type": "double",
+            "occupied": false
+        },
+        "9": {
+            "type": "double",
+            "occupied": false
+        },
+        "10": {
+            "type": "double",
+            "occupied": false
+        }
+    },
+    "bookings": [
+        {
+            "name": "\u0415\u0432\u0433\u0435\u043d",
+            "room": "6",
+            "guests": 3,
+            "check_in": "2001 03 01",
+            "check_out": "2001 03 02",
+            "checked_in": false
+        },
+        {
+            "name": "\u0415\u0432\u0433\u0435\u043d\u0438\u0439",
+            "room": "7",
+            "guests": 2,
+            "check_in": "2024 10 11",
+            "check_out": "2024 10 12",
+            "checked_in": false
+        }
+    ]
+}
