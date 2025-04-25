@@ -82,28 +82,57 @@ def show_status():
     for b in data["bookings"]:
         print(f"{b['name']} - комната #{b['room']}, {b['check_in']} to {b['check_out']}, заселён={b['checked_in']}")
 
+def get_dictionary():
+    return {
+        1: {
+            "action": init_rooms,
+            "description": "Инициализировать номера"
+        },
+        2: {
+            "action": book_room,
+            "description": "Забронировать номер"
+        },
+        3: {
+            "action": check_in_guest,
+            "description": "Заселить клиента"
+        },
+        4: {
+            "action": show_status,
+            "description": "Показать статус"
+        },
+        5: {
+            "action": exit,
+            "description": "Выход из программы"
+        }
+    }
+
 
 def menu():
+    commands = get_dictionary()
     while True:
-        print("\n1. Инициализировать номера")
-        print("2. Забронировать номер")
-        print("3. Заселить клиента")
-        print("4. Показать статус")
-        print("5. Выход")
+        print("\nМеню:")
+        for key in sorted(commands):
+            print(f"{key}. {commands[key]['description']}")
+
         choice = input("Выбор: ")
 
-        if choice == "1":
-            init_rooms()
-        elif choice == "2":
-            book_room()
-        elif choice == "3":
-            check_in_guest()
-        elif choice == "4":
-            show_status()
-        elif choice == "5":
+        if not choice.isdigit():
+            print("Введите номер команды.")
+            continue
+
+        choice = int(choice)
+
+        if choice == 5:
             break
+
+        command = commands.get(choice)
+        if command:
+            command["action"]()
         else:
             print("Неверный выбор. Попробуйте снова.")
 
+
+
 if __name__ == "__main__":
     menu()
+
